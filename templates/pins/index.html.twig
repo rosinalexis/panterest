@@ -22,7 +22,7 @@
                                 <a href="{{ path('app_pins_show',{'id': pin.id}) }}"
                                 class="text-secondary text-decoration-none">{{ pin.title }}</a>
                             </h2>
-                            <p class="ps-3 pb-3 text-muted">Submitted [OWNER FULL NAME]</p>
+                            <p class="ps-3 pb-3 text-muted">Submitted by {{ pin.user.getFullName }}</p>
                         </article>
                     </div>
                 {% endfor %}
