@@ -1,0 +1,25 @@
+
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-4" aria-label="Fourth navbar example">
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('app_home') }}">{{ project.name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsBurger"
+                aria-controls="navbarsBurger" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsBurger">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ set_active_route('app_pins_create') }}"
+                       aria-current="page" href="{{ path('app_pins_create') }}">New Pin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#" >Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
