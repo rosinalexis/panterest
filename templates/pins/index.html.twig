@@ -28,7 +28,10 @@
                 {% endfor %}
             </div>
         {% endfor %}
-
+        <div class="d-flex justify-content-center">
+            {% do pins.setPageRange(2) %}
+            {{ knp_pagination_render(pins, 'layouts/pagination/pagination.html.twig') }}
+        </div>
     {% else %}
         <h1 class="mt-5 text-center ">No pins yet. <a href="{{ path('app_pins_create') }}">Be the first!</a></h1>
     {% endif %}

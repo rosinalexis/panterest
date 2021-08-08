@@ -7,6 +7,7 @@ use App\Form\PinType;
 use App\Repository\PinRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -26,9 +27,15 @@ class PinsController extends AbstractController
     /**
      * @Route("/", name="app_home", methods={"GET"})
      */
-    public function index(PinRepository $pinRepository): Response
+    public function index(PinRepository $pinRepository,PaginatorInterface $paginator,Request $request): Response
     {
-        $pins =$pinRepository->findBy([],['createdAt'  =>'DESC']);
+
+        $data =$pinRepository->findBy([],['createdAt'  =>'DESC']);
+
+        $pins = $paginator->paginate($data,
+            $request->query->getInt('page',1),
+            3
+        );
 
         return $this->render('pins/index.html.twig',compact('pins'));
     }

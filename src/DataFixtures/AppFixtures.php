@@ -12,7 +12,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        for($j=0; $j <2;$j++){
+        for($j=0; $j <3;$j++){
             // Utilisateur de Faker
             $faker = Factory::create('fr Fr');
 

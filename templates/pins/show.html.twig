@@ -29,7 +29,7 @@
                     <div class="pt-3">
                         <a class="btn btn-light" href="{{ path('app_pins_edit',{id:pin.id}) }}">Edit</a> |
                         <a class="btn btn-light" href="#" onclick="event.preventDefault();
-                       confirm('Are you sure ?') && document.getElementById('js-pin-delete-form').submit() "
+                       confirm('Are you sure ?') && document.getElementById('js-pin-delete-form').submit();"
                         >Delete</a>
 
                         <form id="js-pin-delete-form" action="{{ path('app_pins_delete',{id:pin.id}) }}" method="post"
