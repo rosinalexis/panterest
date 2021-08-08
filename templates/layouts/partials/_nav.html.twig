@@ -15,6 +15,11 @@
                         <a class="nav-link {{ set_active_route('app_pins_create') }}"
                            aria-current="page" href="{{ path('app_pins_create') }}">New Pin</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ path('app_account') }}" class="nav-link">Account</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link " href="#"
                         onclick="document.getElementById('js-logout-form').submit()"> Logout ({{ app.user.getFirstName }})</a>
