@@ -27,7 +27,9 @@ class AccountController extends AbstractController
         $form= $this->createForm(UserFormType::class,$user,['method' => 'PUT']);
         $form->handleRequest($request);
 
+
         if($form->isSubmitted() && $form->isValid()){
+            dd($form);
             $em->flush();
             $this->addFlash('success','Account update successfully!');
 
@@ -43,7 +45,10 @@ class AccountController extends AbstractController
     {
         $user = $this->getUser();
 
-        $form = $this->createForm(ChangePasswordFormType::class,$user,['method' => 'PUT']);
+        $form = $this->createForm(ChangePasswordFormType::class,$user,[
+            'method' => 'PUT',
+            'current_password_is_required'=> true
+        ]);
 
         $form->handleRequest($request);
 
